@@ -9,6 +9,7 @@ export default function Home() {
   const [showPassword, setShowPassword] = useState(false);
   const [username,setUsername] =  useState("")
   const [password,setPassword] =  useState("")
+  const [cpassword,setCpassword] =  useState("")
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -20,11 +21,11 @@ export default function Home() {
   return (
     <Box sx={{margin:"8vmax auto"}} >
        <Head>
-      <title>Login</title>
+      <title>Register</title>
       </Head>
       <Stack sx={{flexDirection:{md:"row",xs:"column"},justifyContent:"center",alignItems:"center"}}>
       <Stack sx={{width:{sm:"350px",xs:"320px"},gap:"56px",boxShadow:"0px 2px 13px rgba(0, 0, 0, 0.25)",padding:"24px",margin:"40px",borderRadius:"20px"}}>
-        <Typography variant="h4" color="black">Login</Typography>
+        <Typography variant="h4" color="black">Register</Typography>
         <Stack gap="24px">
         <TextField
           label="Username"  
@@ -55,9 +56,32 @@ export default function Home() {
             onChange={(e)=>{setPassword(e.target.value)}}
             placeholder='ex: Abcd@1234'
           />
-        </FormControl>   
+        </FormControl>  
+        <FormControl sx={{ width: 270 }} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-password">Confirm Password</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-password"
+            type={showPassword ? 'text' : 'password'}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Confirm Password"
+            value={cpassword}
+            onChange={(e)=>{setCpassword(e.target.value)}}
+            placeholder='ex: Abcd@1234'
+          />
+        </FormControl>  
         <Button variant="contained" color="primary" style={{width: 270,borderRadius:"12px",color:"#ffffff"}} onClick={handleSubmit}>
-         login
+          register
         </Button>
         </Stack>
       </Stack>
