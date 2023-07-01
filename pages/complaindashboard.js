@@ -70,8 +70,8 @@ function Complaindashboard () {
     
     <Stack>
 
-<Box sx={{ height: '20vh', p: 3, m: 4, borderRadius: 3, boxShadow: 4, flexGrow: 1 }} >
-    <h3>COMPLAIN OVERVIEW</h3>
+<Box sx={{ height: '20vh', p: 3, m: 4, borderRadius: 3, boxShadow: 4, flexGrow: 1}} >
+    <h3 id="heading">Complain Overview</h3>
     <div className={styles.container}>
         <div className={styles.overview}>
             <span className={styles.open}>
