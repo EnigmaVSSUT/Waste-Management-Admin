@@ -57,7 +57,7 @@ export default function Home() {
           />
         </FormControl>   
         <Button variant="contained" color="primary" style={{width: 270,borderRadius:"12px",color:"#ffffff"}} onClick={handleSubmit}>
-         login
+        <a href="../pages/complaindashboard.js">login</a> 
         </Button>
         </Stack>
       </Stack>
